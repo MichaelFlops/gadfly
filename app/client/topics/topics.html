@@ -1,5 +1,5 @@
 <template name="topics">
-	<nav class="create-topic-navigation center">
+	<!-- <nav class="create-topic-navigation center">
 		<div class="">
 	 		<a href="new"> Create New Topic </a>
 	 	</div>
@@ -12,29 +12,27 @@
 			<a href="chat"> Chat </a>
 		</div>
 		<h2 class=""> Proposals: </h2>
-	</nav>
-
- 	<div class="knowledge">
-    {{#each topicList}}
-			<div class="individual-topic">
-        <a href="view/{{_id}}" class="graphlink"> {{formatBody body}} </a>
-				<div> by <a href="/user/{{username}}">{{username}}</a> </div>
-					<div> Posted {{getTimeString timestamp}}, Last Updated {{lastPost root_id}} </div>
-					<div> Value <span style="color:{{colorValue value}}">({{value}})</span> </div>
-			</div>
-		{{/each}}
+	</nav> -->
+<div class="container">
+	<div class="row">
+		<div class="knowledge">
+	    {{#each topicList}}
+				<div class="individual-topic">
+	        <a href="view/{{_id}}" class="graphlink"> <h5>{{formatBody body}} </h5></a>
+					<div> by <a href="/user/{{username}}">{{username}}</a> </div>
+						<div> Posted {{getTimeString timestamp}}, Last Updated {{lastPost root_id}} </div>
+						<div> Value <span style="color:{{colorValue value}}">({{value}})</span> </div>
+				</div>
+			{{/each}}
+		</div>
 	</div>
-	<div id="informative-wrapper">
+</div>
+	<!-- <div id="informative-wrapper">
 		<div>
 			<a href="what"> What am I looking at?</a>
 		</div>
 		<div>
 			<a href="how"> How do I use it? </a>
 		</div>
-	</div>
-
-	<div class="centerImg">
-		<img class="logo-img" src="gadfly_web_black.png" alt="">
-	</div>
-
+	</div> -->
 </template>

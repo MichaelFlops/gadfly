@@ -8,11 +8,11 @@ Template.view.events({
 });
 
 Template.view.rendered = function(){
-  Session.set("viewMode", "standard");
+  Session.set("viewMode", "graph");
 }
 
 Template.view.helpers({
   isStandard: function(){
-    return Session.get("viewMode") == "standard"; 
+    return Session.get("viewMode") == "standard";
   }
 })

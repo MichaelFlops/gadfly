@@ -1,5 +1,5 @@
 <head>
-  <title>WESPR.CLUB</title>
+  <title>wespr CLUB</title>
 </head>
 
 <body>
@@ -10,6 +10,15 @@
 <template name="layout">
 		{{> header}}
 		{{> yield}}
+    <div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <p class="navbar-text pull-left">© 2016 - made with  <i class="fa fa-heart"></i> by good humans at Omari.
+         <a href="http://github.com/michaelflops/gadfly" target="_blank" >Github Code Here.</a>
+      </p>
+      <a href="http://youtu.be/zJahlKPCL9g" class="navbar-btn btn-danger btn pull-right">
+        Powered by Gadfly  <i class="fa fa-heart"></i></a>
+    </div>
+</div>
 </template>
 
 <template name ="header">
@@ -18,25 +27,32 @@
       <div class="navbar-header">
         <ul class="nav navbar-nav navbar-left text-center">
         <li>
+            <a href="/" class="btn btn-link"><i class="fa fa-home fa-2x"></i></a>
+        </li>
+        <li>
           <p class="navbar-btn">
-            <a href="/" class="btn btn-default">WESPR Club (excluse)</a>
+            <a href="/" class="btn btn-link"><i class="fa fa-headphones fa-2x"></i></a>
           </p>
         </li>
-
       </ul>
       </div>
       <ul class="nav navbar-nav navbar-right text-center">
         {{#if user}}
           <li class="waves-purple">
-            <button type="button" class="btn btn-default navbar-btn">{{> loginButtons align="right"}}</button>
+            <p class="navbar-btn">
+              <a href="/new" class="btn btn-success">New Topic</a>
+            </p>
           </li>
+          <!-- <li class="waves-purple">
+            <p class="navbar-btn">
+              <a href="/chat" class="btn btn-info">chat</a>
+            </p>
+          </li> -->
           <li class="waves-purple">
-            <a href="/prefs">Preferences</a>
+            <button type="button" class="btn btn-default navbar-btn">
+              {{> loginButtons align="right"}}
+            </button>
           </li>
-          <li class="waves-purple">
-            <a href="/user/{{user.username}}">{{user.notifications.length}}Notifications</a>
-          </li>
-
           {{else}}
           <li>
             <button type="button" class="btn btn-default navbar-btn">{{> loginButtons align="right"}}</button>
@@ -56,13 +72,23 @@
 	</dl> -->
 </template>
 
+<template name="_loginButtonsAdditionalLoggedInDropdownActions">
+  <ul class="nav-wrap">
+    <li class="waves-purple btn btn-default navbar-btn">
+      <a href="/prefs">Preferences</a>
+    </li>
+    <li class="waves-purple btn btn-default navbar-btn">
+      <a href="/user/{{user.username}}">{{user.notifications.length}}Notifications</a>
+    </li>
+  </ul>
+</template>
+
 <template name="searchBox">
     {{> esInput index="USER" placeholder="Search..." }}
-
     <ul>
-        {{#esEach index="USER"}}
-            <li>Name of the player: {{name}}</li>
-        {{/esEach}}
+      {{#esEach index="USER"}}
+        <li>Name of the player: {{name}}</li>
+      {{/esEach}}
     </ul>
 </template>
 
