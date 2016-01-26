@@ -1,6 +1,12 @@
 /* CSS declarations go here */
+
+.panel-primary > .panel-heading {
+  margin-top: 10px !important;
+}
+
+
 *{
-text-transform: capitalize !important;
+text-transform: none !important;
 }
 
 .inputSuccessFix{

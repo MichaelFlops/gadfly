@@ -14,25 +14,36 @@
 		<h2 class=""> Proposals: </h2>
 	</nav> -->
 <div class="container">
-	<div class="row">
-		<div class="knowledge">
-	    {{#each topicList}}
-				<div class="individual-topic">
-	        <a href="view/{{_id}}" class="graphlink"> <h5>{{formatBody body}} </h5></a>
-					<div> by <a href="/user/{{username}}">{{username}}</a> </div>
-						<div> Posted {{getTimeString timestamp}}, Last Updated {{lastPost root_id}} </div>
-						<div> Value <span style="color:{{colorValue value}}">({{value}})</span> </div>
-				</div>
-			{{/each}}
+	<!-- <div class="row"> -->
+    {{#each topicList}}
+		<div class="span3">
+		<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <p class="panel-title">Posted {{getTimeString timestamp}}, Last Updated {{lastPost root_id}}
+				by <a href="/user/{{username}}">{{username}}</a></p>
+		  </div>
+		  <div class="panel-body">
+		    <a href="view/{{_id}}" class="graphlink"> <h3 class="pull-left panel-title">{{formatBody body}} </h3></a>
+				<p class="text-right">
+					Vigor <span style="color:{{colorValue value}}" class="badge">({{value}})</span>
+				</p>
+		  </div>
 		</div>
 	</div>
+				<!-- <div class="individual-topic">
+					<div class="row-fluid">
+					<div class="span6"> -->
+					<!-- <a href="view/{{_id}}" class="graphlink"> <h5 class="text-left">{{formatBody body}} </h5></a>
+					<div class="text-right"> by <a href="/user/{{username}}">{{username}}</a> </div> -->
+					<!-- </div>
+	        <div class="span6"> -->
+						<!-- <p class="text-right">
+							Value <span style="color:{{colorValue value}}">({{value}})</span>
+						</p>
+						<p class="text-right">
+							Posted {{getTimeString timestamp}}, Last Updated {{lastPost root_id}}
+						</p> -->
+			{{/each}}
+	<!-- </div> -->
 </div>
-	<!-- <div id="informative-wrapper">
-		<div>
-			<a href="what"> What am I looking at?</a>
-		</div>
-		<div>
-			<a href="how"> How do I use it? </a>
-		</div>
-	</div> -->
 </template>
