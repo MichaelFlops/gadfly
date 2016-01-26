@@ -7,10 +7,12 @@ standard-app-packages
 insecure
 d3
 iron:router
-accounts-ui
 accounts-password
-ewall:foundation
 autopublish
 reactive-var
 stevezhu:lodash
 matteodem:easy-search
+standard-minifiers
+bootswatch:paper
+useraccounts:bootstrap
+ian:accounts-ui-bootstrap-3

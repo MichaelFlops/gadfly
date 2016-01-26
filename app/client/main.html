@@ -1,5 +1,5 @@
 <head>
-  <title>Gadfly</title>
+  <title>WESPR.CLUB</title>
 </head>
 
 <body>
@@ -8,33 +8,52 @@
 </body>
 
 <template name="layout">
-	<div>
-		<div style="float:left; margin:15px;">
-			{{> topBar}}
-		</div>
-
-		<div style="float:right; margin-right:15px;">
-			{{#if user}}
-				<div>
-					<a href="/prefs"> preferences</a>
-					<a id="logout"> logout</a>
-					<a href="/user/{{user.username}}" style="text-decoration:underline;"> {{user.username}} ({{user.notifications.length}}) </a>
-				</div>
-			{{else}}
-				{{> loginButtons align="right"}}
-			{{/if}}
-		</div>
-	</div>
-
-	<div style="clear:both; margin:10px">
+		{{> header}}
 		{{> yield}}
-	</div>
 </template>
 
-<template name ="topBar">
-	<dl class="sub-nav nav-links"> <dt><a href="/">Gadfly:</a></dt>
-		<dd class="active"><a href="https://github.com/prudentbot/gadfly">Github</a></dd>
-	</dl>
+<template name ="header">
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav navbar-left text-center">
+        <li>
+          <p class="navbar-btn">
+            <a href="/" class="btn btn-default">WESPR Club (excluse)</a>
+          </p>
+        </li>
+
+      </ul>
+      </div>
+      <ul class="nav navbar-nav navbar-right text-center">
+        {{#if user}}
+          <li class="waves-purple">
+            <button type="button" class="btn btn-default navbar-btn">{{> loginButtons align="right"}}</button>
+          </li>
+          <li class="waves-purple">
+            <a href="/prefs">Preferences</a>
+          </li>
+          <li class="waves-purple">
+            <a href="/user/{{user.username}}">{{user.notifications.length}}Notifications</a>
+          </li>
+
+          {{else}}
+          <li>
+            <button type="button" class="btn btn-default navbar-btn">{{> loginButtons align="right"}}</button>
+          </li>
+  		  {{/if}}
+      </ul>
+    </div>
+  </nav>
+
+
+<!--
+
+	<dl class="sub-nav nav-links"> <dt><a href="/">Western Eastern Southern Public Radio Club.</a></dt>
+		<dd class="active"><a href="https://github.com/michaelflops/gadfly">Github</a></dd>
+    <dd class="active"><a href="http://www.wespr.org/">Listen</a></dd>
+    <dd class="active"><a href="http://github.com/michaelflops/gadfly">Read</a></dd>
+	</dl> -->
 </template>
 
 <template name="searchBox">
@@ -98,5 +117,3 @@
 		</div>
 	</div>
 </template>
-
-

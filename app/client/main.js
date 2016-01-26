@@ -7,9 +7,12 @@ Meteor.startup(function(){
   height = 500;
 })
 
-Template.layout.user = function () {
-  return Meteor.user()
-}
+Template.header.helpers({
+  user: function(){
+    console.log("hit");
+    return Meteor.user();
+  }
+});
 
 Template.layout.events({
   'click #logout': function(){

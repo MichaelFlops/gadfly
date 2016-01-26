@@ -1,4 +1,7 @@
 /* CSS declarations go here */
+.navbar-inverse .form-control {
+     color: #222 !important; 
+}
 
 .arc path {
   stroke: #fff;
@@ -238,4 +241,3 @@ select:hover {
 .create-topic-navigation {
 	text-align: center;
 }
-
